@@ -1,12 +1,2 @@
-# استفاده از ایمیج رسمی n8n
 FROM n8nio/n8n:latest
-
-# تنظیم timezone و enforce permissions
-ENV GENERIC_TIMEZONE="Asia/Tehran"
-ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
-
-# پورت پیش‌فرض n8n
-EXPOSE 5678
-
-# اجرای n8n
-CMD ["n8n", "start"]
+CMD ["node", "-e", "console.log('INSIDE IMAGE: node and n8n status'); console.log(process.execPath); try{ console.log(require('child_process').execSync('which n8n').toString()) }catch(e){ console.log('which n8n failed:', e.message) }"]

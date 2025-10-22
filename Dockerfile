@@ -9,4 +9,5 @@ ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 EXPOSE 5678
 
 # اجرای n8n
-CMD ["n8n", "start"]
+# این خط جدید و اصلاح شده است
+CMD ["/usr/local/bin/n8n", "start"]

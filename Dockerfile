@@ -1,7 +1,7 @@
 # استفاده از ایمیج رسمی n8n
 FROM n8nio/n8n:latest
 
-# تنظیم timezone (اختیاری)
+# تنظیم timezone و enforce permissions
 ENV GENERIC_TIMEZONE="Asia/Tehran"
 ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 

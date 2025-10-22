@@ -1,13 +1,9 @@
-# استفاده از ایمیج رسمی n8n
+# Dockerfile برای پیدا کردن مشکل
 FROM n8nio/n8n:latest
 
-# تنظیم timezone و enforce permissions
-ENV GENERIC_TIMEZONE="Asia/Tehran"
-ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+# به جای اجرای n8n، دستورات زیر را برای بررسی وضعیت داخل کانتینر اجرا می‌کنیم
+# 1. whoami: ببینیم با چه کاربری لاگین هستیم (مثلا root یا node)
+# 2. ls -la /usr/local/bin: لیست تمام فایل‌های داخل پوشه‌ای که انتظار داریم n8n آنجا باشد را نشان بده
+# 3. find / -type f -name "n8n": کل سیستم را برای پیدا کردن فایل n8n بگرد
 
-# پورت پیش‌فرض n8n
-EXPOSE 5678
-
-# اجرای n8n
-# این خط جدید و اصلاح شده است
-CMD ["/usr/local/bin/n8n", "start"]
+CMD ["sh", "-c", "echo '--- DIAGNOSTICS START ---' && echo '1. Current User:' && whoami && echo '---' && echo '2. Contents of /usr/local/bin:' && ls -la /usr/local/bin && echo '---' && echo '3. Finding n8n executable:' && find / -type f -name 'n8n' && echo '--- DIAGNOSTICS END ---'"]

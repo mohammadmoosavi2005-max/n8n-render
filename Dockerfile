@@ -3,6 +3,7 @@ FROM n8nio/n8n:latest
 
 # تنظیم timezone (اختیاری)
 ENV GENERIC_TIMEZONE="Asia/Tehran"
+ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 
 # پورت پیش‌فرض n8n
 EXPOSE 5678

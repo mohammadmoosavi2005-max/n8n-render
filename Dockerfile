@@ -1,2 +1,8 @@
+# استفاده از تصویر رسمی n8n
 FROM n8nio/n8n:latest
-CMD ["node", "-e", "console.log('INSIDE IMAGE: node and n8n status'); console.log(process.execPath); try{ console.log(require('child_process').execSync('which n8n').toString()) }catch(e){ console.log('which n8n failed:', e.message) }"]
+
+# اگر می‌خوای پلاگین یا پکیج اضافی نصب کنی، اینجا اضافه کن
+# RUN npm install some-package
+
+# تنظیمات پیش‌فرض n8n خود تصویر را نگه می‌دارد
+# CMD پیش‌فرض تصویر n8n خودش n8n را start می‌کند

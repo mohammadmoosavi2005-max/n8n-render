@@ -1,6 +1,6 @@
 # استفاده از تصویر رسمی n8n
 FROM n8nio/n8n:latest
-
+VOLUME ["/home/node/.n8n"]
 # اگر می‌خوای پلاگین یا پکیج اضافی نصب کنی، اینجا اضافه کن
 # RUN npm install some-package
 
